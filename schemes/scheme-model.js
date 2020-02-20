@@ -34,8 +34,6 @@ function add(scheme){
      return db('schemes')
      .insert(scheme)
      .then(ids => {
-          console.log(ids)
-          console.log(ids[0])
           return findById(ids[0])
      })
 }

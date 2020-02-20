@@ -22,10 +22,15 @@ function findById(id){
 }
 
 //* GET steps by scheme ID */
-function findSteps(id){
-     return db.select('steps.id', 'schemes.scheme_name','steps.step_number', 'steps.instructions')
-     .from('schemes')
-     .join('steps', 'schemes.id', '=', 'steps.scheme_id')
+
+
+     function findSteps(id){
+          return db
+            .select('steps.id', 'schemes.scheme_name','steps.step_number', 'steps.instructions')
+          .from('schemes')
+          .where({'schemes.id' :id})
+          .join('steps', 'schemes.id', '=', 'steps.scheme_id')
+     
 }
 
 //* POST new scheme */

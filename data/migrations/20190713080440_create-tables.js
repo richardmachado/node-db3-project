@@ -20,7 +20,8 @@ exports.up = function(knex) {
         .references('id')
         .inTable('schemes')
         .onUpdate('CASCADE')
-        .onDelete('CASCADE');
+        .onDelete('CASCADE')
+      
     });
 };
 
